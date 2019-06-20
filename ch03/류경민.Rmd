@@ -64,8 +64,7 @@ n4 <- 20
 p4 <- 1/5
 x4 <- 0:n4
 
-pbinom(20,size=n4,prob=p4) - pbinom(1,size=n4,prob=p4)
-qbinom(0.0000000000001,size = n4,prob = p4)   # 이 확률보다 큰값들의 합
+pbinom(19, size = n4, prob = (1-p4))
 
 px4 <- dbinom(x4, size = n4, prob = p4)
 plot(x4, px4, type="s", xlab="회복률(x)", ylab="확률", main="회복률 분포(확률1/5)")
@@ -121,15 +120,16 @@ ul1 <- mu1 + 3*sigma1
 
 x02 <- seq(ll1, ul1, by=0.01)
 nd02 <- dnorm(x02, mean = mu1,sd = sigma1)
+
 plot(x02 , nd02, type="l", xlab= "x",ylab="p(X=x)", lwd=2,col="red")
 
-qnorm(0.713,mean = mu1, sd=sigma1)
-1-0.713 # 약 29퍼센트 
+pnorm(20,mean = mu1,sd=sigma1,lower.tail = FALSE)
+# 약 29퍼센트
 ```
 
 # 2) 근무연수가 가장 오래된 10%의 종업원은 이 회사에서 몇 년 이상 근무했다고 볼 수 있는가?
 ```{r}
-qnorm(0.90,mean = mu1, sd=sigma1) #31.5년
+qnorm(0.90,mean = mu1, sd=sigma1) #31.5년이상
 ```
 
 
@@ -170,6 +170,38 @@ plot(x04 , nd04, type="l", xlab= "x",ylab="p(X=x)", lwd=2,col="red")
 h0 <-  pnorm(1 ,mean = mu3, sd=sigma3) - pnorm(0 ,mean = mu3, sd=sigma3) 
 h2 <-  pnorm(3 ,mean = mu3, sd=sigma3) - pnorm(2 ,mean = mu3, sd=sigma3) 
 h2 + h0 # 약 35퍼센트
+
+ph0 <- qnorm(0.227,mean=mu3,sd = sigma3)
+ph1 <- qnorm(0.401,mean = mu3, sd=sigma3)
+ph2 <- qnorm(0.599,mean=mu3,sd = sigma3)
+ph3 <- qnorm(0.773,mean = mu3, sd=sigma3)
+ph0;ph1;ph2;ph3
+
+axis(1)
+lines(c(-4, 6), c(0.009, 0.009))
+
+points(0.00247, 0.005, pch=17, col="red")
+text(0.00247, -0.002, "0", col="red")
+points(0.998, 0.005, pch=17, col="red")
+text(0.998, -0.002, "1", col="red")
+points(2, 0.005, pch=17, col="red")
+text(2, -0.002, "2", col="red")
+points(3, 0.005, pch=17, col="red")
+text(3, -0.002, "3", col="red")
+
+s1 <- seq(0.00247, 0.998, by=0.001)
+s.z1 <- dnorm(s1, mean=1.5, sd=2)
+s1 <- c(0.00247, s1, 0.998)
+s.z1 <- c(0.009, s.z1, 0.009)
+
+s <- seq(2, 3, by=0.001)
+s.z <- dnorm(s, mean=1.5, sd=2)
+s <- c(2, s, 3)
+s.z <- c(0.009, s.z, 0.009)
+
+
+polygon(s1, s.z1, density=10, col="gold")
+polygon(s, s.z, density=10, col="gold")
   
 ```
 
