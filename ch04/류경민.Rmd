@@ -60,7 +60,7 @@ x4 <- seq(min(ch.64.mean), max(ch.64.mean), length=1000)
 y4 <- dnorm(x=x4, mean=m1, sd=s1/sqrt(64))
 lines(x4, y4, lty=2, lwd=2, col="blue")
 
-mtext("Chi Square 표본평균 분포(df=10인 경우)", outer = TRUE, cex = 1.2)
+mtext("카이 분포(df=10인 경우)", outer = TRUE, cex = 1.2)
 ```
 
 ## T 분포 ##
@@ -114,7 +114,7 @@ x4 <- seq(min(t.16.mean), max(t.16.mean), length=1000)
 y4 <- dnorm(x=x4, mean=m, sd=s/sqrt(16))
 lines(x4, y4, lty=2, lwd=2, col="blue")
 
-mtext("T 표본평균 분포(df=30인 경우)", outer = TRUE, cex = 1.2)
+mtext("T 분포(df=30인 경우)", outer = TRUE, cex = 1.2)
 ```
 
 ## F 분포 ##
@@ -172,6 +172,6 @@ x4 <- seq(min(f.16.mean), max(f.16.mean), length=1000)
 y4 <- dnorm(x=x4, mean=m2, sd=s2/sqrt(16))
 lines(x4, y4, lty=2, lwd=2, col="blue")
 
-mtext("F 표본평균 분포(df1=3, df5=5인 경우)", outer = TRUE, cex = 1.2)
+mtext("F 분포(df1=10, df5=20인 경우)", outer = TRUE, cex = 1.2)
 
 ```
