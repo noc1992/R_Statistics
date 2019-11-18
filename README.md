@@ -3,16 +3,33 @@
 ## 교재 : 제대로 알고 쓰는 R 통계분석
 ### 저자 : 이윤환 (한빛아카데미)
 
-# 깃 리모트 변경 하기
+## ch02
+    - R 내장 데이터를 이용한 연습문제 (car 등등)
+    
+## ch03
+    - prob 패키지
 
-## 기존 리포지토리 깔끔하게 pull / push
-### git pull
-### git add .
-### git commit -m "clean push"
-### git push
+## ch04
+    - 표본평균_카이_T_F 분포
 
-## 기존 리포지토리 remote 제거
-### git remote remove origin
+## ch05
+    - ch234 연습문제 시험
 
-## 새 리포지토리 remote 추가
-### git remote add origin https://github.com/noc1992/리포지토리명 
+## ch06
+    - 과제 
+
+## ch07
+    - 과제 (가설검증)
+
+## ch08
+    - 과제 (독립성 검정)
+      
+## ch09
+    - 상관계수
+    - 변수모델
+    - polinomial
+    - 다중회귀모형
+    - 로지스틱 회귀
+    
+## exam
+    - 교제 최종 시험
